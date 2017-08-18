@@ -2,7 +2,7 @@
 '''
 i=2
 j=1
-print(1)
+print(i)
 print(j)
 while(i<100):
     print(i)
