@@ -1,0 +1,20 @@
+<!-- Array - Basics -->
+<html>
+    <body>
+        <script>
+            var arr = new Array();
+            sum=0;
+            for (i=0;i<5;i++)
+            {
+                arr[i]=parseInt(prompt("Enter Value"));
+                sum+=arr[i];
+                document.write(arr[i] + "<br>");
+            }
+
+            document.write("No of Elements in array = " + arr.length + "<br>");
+            document.write("Sum = " + sum + "<br>");
+            document.write("Average = " + sum/arr.length);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!-- Recursion -->
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function series(sum1, sum2)
+        {
+            document.write(sum1 + "<br>");
+            if(sum1 == 41) {
+                return;
+            }
+            sum1 = sum1 + sum2;
+            sum2 +=2;
+            series(sum1, sum2);
+        }
+        series(5,1);
+    </script>
+</body>
+</html>

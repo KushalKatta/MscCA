@@ -1,0 +1,49 @@
+<!-- Array - Size Given By User in Form & Output To html Form & Print Second Largest Item-->
+<html>
+    <body>
+        <script>
+            function createArr()
+            {
+                var arr = new Array();
+
+                size=document.form1.size.value;
+
+                max=0;
+                max2=0;
+
+                for(i=0;i<size;i++)
+                {
+                    arr[i]=parseInt(prompt("Enter Value"));
+
+                    if(arr[i]>max)
+                    {
+                        max2=max;
+                        max=arr[i];
+                    }
+                    else if(arr[i]>max2)
+                    {
+                        max2=arr[i];
+                    }
+                }
+                size=document.form1.textArea.value=arr;
+
+                document.form1.textbox.value="2nd Largest Element is " + max2;
+            }
+        </script>
+
+        <form name="form1" method="POST" onsubmit="return false">
+            <label>
+                Enter Size of Array
+            </label>
+            <input name="size" type="text">
+            <button onclick="createArr()">
+                OK
+            </button>
+            <br>
+            <textarea name="textArea">
+            </textarea>
+            <br>
+            <input type="text" name="textbox">
+        </form>
+    </body>
+</html>

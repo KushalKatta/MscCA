@@ -1,0 +1,41 @@
+<!-- Output of One Function as Input to Another Function -->
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function halfNumber(number)
+        {
+            return (number/2);
+        }
+        function cubeNumber(number)
+        {
+            return (number**3);
+        }
+        function areaOfCircle(radius)
+        {
+            return 22/7*(radius**2);
+        }
+        function percentOf(number1, number2)
+        {
+            return (number1/number2*100);
+        }
+        function tempconversion(temp)
+        {
+            return ((9/5)*temp)+32;
+        }
+        no1=parseInt(prompt("Enter a Number"));
+        half=halfNumber(no1);
+        cube=cubeNumber(half);
+        area=areaOfCircle(cube);
+        percent=percentOf(area,cube);
+        temp=tempconversion(percent);
+
+        document.write("Half of "+ no1 +" is " + half + "<br>");
+        document.write("Cube of "+ half +" is " + cube + "<br>");
+        document.write("Area of "+ cube +" is " + area + "<br>");
+        document.write(area + " is " + percent + "% of " + cube + "<br>");
+        document.write(percent+" Degee C is "+ temp +" F" + "<br>");
+    </script>
+</body>
+</html>

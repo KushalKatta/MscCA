@@ -1,0 +1,55 @@
+<!-- Array - Size Given By User in Form & Output To html Form & Find The Item in that Array-->
+<html>
+    <body>
+        <script>
+            var arr = new Array();
+            function createArr()
+            {
+
+                size=document.form1.size.value;
+
+                for(i=0;i<size;i++)
+                {
+                    arr[i]=parseInt(prompt("Enter Value"));
+                }
+                size=document.form1.textArea.value=arr;
+            }
+            function findE()
+            {
+                indx=-1;
+                find=document.form1.textbox.value;
+                for (i=0;i<arr.length;i++)
+                {
+                    if (arr[i]==find)
+                    {
+                        indx=i;
+                        break;
+                    }
+                }
+                if (indx>=0)
+                {
+                    document.form1.label1.value=find + " is on " + (parseInt(indx)+1) + " position";
+                }
+                else{
+                    document.form1.label1.value="";
+                }
+            }
+        </script>
+
+        <form name="form1" method="POST" onsubmit="return false">
+            <label>
+                Enter Size of Array
+            </label>
+            <input name="size" type="text">
+            <button onclick="createArr()">
+                OK
+            </button>
+            <br>
+            <textarea name="textArea">
+            </textarea>
+            <br>
+            <input type="text" name="textbox" onkeyup="findE()">
+            <input type="text" name="label1">
+        </form>
+    </body>
+</html>

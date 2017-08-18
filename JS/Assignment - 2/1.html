@@ -1,0 +1,22 @@
+<!-- Maximum of Two Numbers -->
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function maximum(x,y)
+        {
+            max=x;
+            if (y>max)
+            {
+                max=y;
+            }
+            return max;
+        }
+        no1=parseInt(prompt("Enter a Number"));
+        no2=parseInt(prompt("Enter Second Number"));
+        max=maximum(no1,no2);
+        document.write("Maximum of ",no1, " and "+no2+" is "+max);
+    </script>
+</body>
+</html>

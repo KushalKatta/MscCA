@@ -1,0 +1,38 @@
+<!-- Array - 2D Array Basics -->
+<html>
+    <body>
+        <script>
+            //arr = [[],[],[],[],[]];
+            arr=new Array(5);
+            for(i=0;i<5;i++)
+            {
+                arr[i]=new Array(3);
+            }
+
+            document.write("<table border>");
+
+            document.write("<tr><th>Name</th><th>DOB</th><th>Phone No</th></tr>")
+
+            for(j=0;j<5;j++)
+            {
+                document.write("<tr>");
+
+                arr[j][0]=prompt("Enter Student Name");
+                document.write("<td>"+arr[j][0]+"</td>");
+
+                arr[j][1]=prompt("Enter Student DOB");
+                document.write("<td>"+arr[j][1]+"</td>");
+                
+                arr[j][2]=prompt("Enter Student Contact No");
+                document.write("<td>"+arr[j][2]+"</td>");
+
+                document.write("</tr>");
+            }
+            document.write("</table>");
+
+            document.write("No of Elements in array = " + arr.length + "<br>");
+
+        </script>
+
+    </body>
+</html>

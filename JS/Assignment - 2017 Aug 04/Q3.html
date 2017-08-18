@@ -1,0 +1,32 @@
+<!-- Array - Size Given By User in Form & Output To html Form-->
+<html>
+    <body>
+        <script>
+            function createArr()
+            {
+                var arr = new Array();
+
+                size=document.form1.size.value;
+
+                for(i=0;i<size;i++)
+                {
+                    arr[i]=parseInt(prompt("Enter Value"));
+                }
+                size=document.form1.textArea.value=arr;
+            }
+        </script>
+
+        <form name="form1" method="POST" onsubmit="return false">
+            <label>
+                Enter Size of Array
+            </label>
+            <input name="size" type="text">
+            <button onclick="createArr()">
+                OK
+            </button>
+            <br>
+            <textarea name="textArea">
+            </textarea>
+        </form>
+    </body>
+</html>

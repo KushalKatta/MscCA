@@ -1,0 +1,42 @@
+<!-- Array - Push -->
+<html>
+    <body>
+        <script>
+            var arr = new Array();
+
+            input=1;
+            max=0;
+            min=10;
+
+            while(input>0)
+            {
+                input=parseInt(prompt("Enter Value"));
+                if (input<=0)
+                {
+                    break;
+                }
+                arr.push(input);
+                document.write(input + "<br>");
+                if(input>max)
+                {
+                    max=input;
+                }
+                if(input<min)
+                {
+                    min=input;
+                }
+            }
+
+            document.write("No of Elements in array = " + arr.length + "<br>");
+            if(arr.length>0)
+            {
+                document.write("Max = " + max + "<br>");
+                document.write("Min = " + min);
+            }
+            else{
+                document.write("Empty Array. So Can't Print Min and Max");
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!-- Array - Array of Basic Form Inputs -->
+<html>
+    <body>
+        <script>
+            function func()
+            {
+                document.form1.textarea.value="In "+document.form1.inputTxt[0].value+" in the " + document.form1.inputTxt[1].value + " " + document.form1.inputTxt[2].value + ", You Observed the following weather: \n";
+                weather=[];
+                weather=document.form1.inputChk;
+                for(i=0;i<weather.length-1;i++)
+                {
+                    if (weather[i].checked==true)
+                    {
+                        document.form1.textarea.value+=weather[i].value + ", ";
+                    }
+                }
+            }
+        </script>
+
+        <form name="form1">
+            <input type="text" name="inputTxt" placeholder="City">
+            <br>
+            <input type="text" name="inputTxt" placeholder="Month">
+            <br>
+            <input type="text" name="inputTxt" placeholder="Year">
+            <br>
+
+            <input type="checkbox" name="inputChk" value="Rain">Rain
+            <br>
+            <input type="checkbox" name="inputChk" value="Sunshine">Sunshine
+            <br>
+            <input type="checkbox" name="inputChk" value="Clouds">Clouds
+            <br>
+            <input type="checkbox" name="inputChk" value="Hail">Hail
+            <br>
+            <input type="checkbox" name="inputChk" value="Sleet">Sleet
+            <br>
+            <input type="checkbox" name="inputChk" value="Snow">Snow
+            <br>
+            <input type="checkbox" name="inputChk" value="Wind">Wind
+            <br>
+            
+            <input type="button" name="submit" value="OK" onclick="func()">
+            <br>
+            
+            <textarea name="textarea"></textarea>
+        </form>
+    </body>
+</html>

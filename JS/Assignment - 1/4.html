@@ -1,0 +1,48 @@
+<!-- Students' Grade and SUM and AVG of All Students Marks -->
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            grade=null;
+            sum=0;
+            for(i=1;i<=5;i++)
+            {
+                no1=prompt("Enter the Marks of Student " + i);
+                if (no1>=675)
+                {
+                    grade="A+";
+                }
+                else if(no1>=625)
+                {
+                    grade="A";
+                }
+                else if(no1>=575)
+                {
+                    grade="B+";
+                }
+                else if(no1>=525)
+                {
+                    grade="B";
+                }
+                else if(no1>=475)
+                {
+                    grade="C+";
+                }
+                else if(no1>=425)
+                {
+                    grade="C";
+                }
+                else
+                {
+                    grade="D";
+                }
+                document.write("Student "+ i +"'s Marks are "+ no1 +" and Grade is "+ grade+"<br>")
+                sum+=parseInt(no1);
+            }
+            document.write("<br><br>")
+            document.write("Sum of Marks of All Students: " + sum + "<br>");
+            document.write("Average of Marks of All Students: " + sum/5 + "<br>");
+        </script>
+    </body>
+</html>

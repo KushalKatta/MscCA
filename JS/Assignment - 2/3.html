@@ -1,0 +1,19 @@
+<!-- Final Grade Calculations -->
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function calcFinalGrade(homework, midterm, final)
+        {
+            final_grade = (homework * 0.4) + (midterm * 0.3) + (final * 0.3 );
+            return final_grade;
+        }
+        no1=parseInt(prompt("Enter Homework Exam Grade"));
+        no2=parseInt(prompt("Enter Midterm Exam Grade"));
+        no3=parseInt(prompt("Enter Final Exam Grade"));
+        grade=calcFinalGrade(no1, no2, no3);
+        document.write("Final Grades of student having " + no1 + ", " + no2 + ", and " + no3 + " score is "+grade);
+    </script>
+</body>
+</html>
