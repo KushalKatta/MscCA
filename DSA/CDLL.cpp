@@ -1,3 +1,4 @@
+// Circular Double Linked List
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
@@ -14,7 +15,7 @@ class CDLL
     friend int lengthT(CDLL * T);
     friend void printH(CDLL * H);
     friend void printT(CDLL * T);
-    
+
     friend void addnode(CDLL * &H, CDLL * &T, int data);
     friend void deleted(CDLL * &H, CDLL * &T, int data);
 };
@@ -25,7 +26,7 @@ int lengthH(CDLL * H)
     {
         return (0);
     }
-    
+
     int numb(1);
     CDLL *T;
     T=H->left;  //  --**--Imp Step--**--
@@ -43,7 +44,7 @@ int lengthT(CDLL * T)
     {
         return (0);
     }
-    
+
     int numb(1);
     CDLL *H;
     H=T->right;  //  --**--Imp Step--**--

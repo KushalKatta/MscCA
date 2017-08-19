@@ -1,3 +1,4 @@
+// Linear Single Linked List
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
@@ -9,18 +10,18 @@ class LSLL
     public: LSLL(){}    //Null Constructor
     ~LSLL(){}
 
-    friend int length(LSLL *& H);
-    friend void print(LSLL *& H);
+    friend int length(const LSLL * H);
+    friend void print(const LSLL * H);
     friend void addnode(LSLL *& H, LSLL *& T, int data);
     friend void deleted(LSLL *& H, LSLL *& T, int data);
-    friend void reverse(LSLL *& H, LSLL *& T);          //Friend Function for Class LSLL for Simulating Reverse Traversal
-    friend void sortLA(LSLL *& H, LSLL *& T);    //Method TO Sort Linked List in Assending Order
+    friend void reverse(LSLL *& H, LSLL *& T);  //Friend Function for Class LSLL for Simulating Reverse Traversal
+    friend void sortLA(LSLL *& H, LSLL *& T);   //Method TO Sort Linked List in Assending Order
 };
 
-int length(LSLL *& H)
+int length(const LSLL * H)
 {
     int numb(0);
-    LSLL * temp;
+    const LSLL * temp;
     temp=H;
     while(temp!=NULL)
     {
@@ -30,9 +31,9 @@ int length(LSLL *& H)
     return (numb);
 }
 
-void print(LSLL *& H)
+void print(const LSLL * H)
 {
-    LSLL * temp(H);
+    const LSLL * temp(H);
     if(temp==NULL)
     {
         cout<<"NULL LSLL\n";
