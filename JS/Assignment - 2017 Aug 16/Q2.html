@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script>
+            str=prompt("Enter A String");
+            search=prompt("Enter A String to Search");
+
+            i=0;
+            index=-1;
+            count=0;
+
+            while(index<str.length)
+            {
+                i=str.indexOf(search,++index);
+                if(index>i)
+                {
+                    break;
+                }
+                count++;
+                // document.write(i);
+                index=i;
+            }
+            if(count>0)
+            {
+                document.write("String Was found "+count+" times in a given Text.")
+            }
+            else
+            {
+                document.write("String Not Found in a Given Text.");
+            }
+
+        </script>
+    </body>
+</html>

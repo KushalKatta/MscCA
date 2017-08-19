@@ -1,0 +1,41 @@
+<!doctype html>
+
+<head>
+    <title>Q5</title>
+
+    <style>
+
+    </style>
+
+    <script>
+        function resetForm()
+        {
+        	document.f.text1.focus();
+            alert("Data cleared off.");
+        }
+    </script>
+</head>
+
+<body>
+    <center><h1>Form Details</h1></center>
+    <br><br>
+    <div style="border:solid; border-color:grey; margin-right: 400px; margin-left: 400px">
+        <form name="f" style="margin: 50px">
+            <span>Enter name: </span>
+            <input id="txt1" type="text" name="text1" style="width: 100%" autofocus>
+            <br><br>
+            
+            <span>Enter age: </span>
+            <input id="txt2" type="text" name="text2" style="width: 100%">
+            <br><br>
+
+            <span>Enter address: </span>
+            <textarea id="txt3" type="textarea" name="text3" style="width: 100%" rows="3"></textarea>
+            <br><br>
+
+            <input type="reset" name="btn1" value="Reset" onclick="resetForm()" style="width: 100%; height: 50px">
+        </form>
+    </div>
+</body>
+
+</html>

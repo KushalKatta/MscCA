@@ -1,0 +1,28 @@
+<!doctype html>
+
+<head>
+	<title>Q3</title>
+	
+	<style>
+		
+	</style>
+
+	<script>
+		function showCount()
+		{
+			
+			count = document.form1.textarea1.value.length;
+			document.form1.txt1.value = count;
+		}
+	</script>
+</head>
+
+<body>
+	<form name="form1">
+		<textarea name="textarea1" rows="2" onkeyup="showCount()"></textarea>
+		<br>
+		<input name="txt1" type="text" name="">
+	</form>
+</body>
+
+</html>

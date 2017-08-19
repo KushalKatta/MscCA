@@ -1,0 +1,116 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function calculatepay()
+            {
+                document.pay.da.value=(document.pay.basicpay.value)*50/100;
+                document.pay.hra.value=(document.pay.basicpay.value)*50/100;
+                document.pay.pf.value=(document.pay.basicpay.value)*4/100;
+                document.pay.tax.value=(document.pay.basicpay.value)*2/100;
+                document.pay.grosspay.value=parseInt(document.pay.basicpay.value)+parseInt(document.pay.da.value)+parseInt(document.pay.hra.value);
+                document.pay.deduction.value=parseInt(document.pay.pf.value)+parseInt(document.pay.tax.value);
+                document.pay.netpay.value=document.pay.grosspay.value-document.pay.deduction.value
+
+            }
+        </script>
+        <form onclick="calculatepay()" name="pay">
+            <table border="1">
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        <input type="text" name="Name" placeholder="Name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User ID
+                    </td>
+                    <td>
+                        <input type="text" name="userid" placeholder="User ID">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Designation
+                    </td>
+                    <td>
+                        <input type="text" name="desg" placeholder="Designation">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Basic Pay
+                    </td>
+                    <td>
+                        <input type="text" name="basicpay" placeholder="Basic Pay">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="">
+                        <input type="button" name="submit" value="Calculate Pay">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        DA
+                    </td>
+                    <td>
+                        <input type="text" name="da" placeholder="DA">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        HRA
+                    </td>
+                    <td>
+                        <input type="text" name="hra" placeholder="HRA">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        PF
+                    </td>
+                    <td>
+                        <input type="text" name="pf" placeholder="PF">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tax
+                    </td>
+                    <td>
+                        <input type="text" name="tax" placeholder="Tax">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gross Pay
+                    </td>
+                    <td>
+                        <input type="text" name="grosspay" placeholder="Gross Pay">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Deduction
+                    </td>
+                    <td>
+                        <input type="text" name="deduction" placeholder="Deduction">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Net Pay
+                    </td>
+                    <td>
+                        <input type="text" name="netpay" placeholder="Net Pay">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

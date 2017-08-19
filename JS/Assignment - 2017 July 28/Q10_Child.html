@@ -1,0 +1,33 @@
+<!doctype html>
+
+<head>
+    <title>Q10_Child</title>
+
+    <style>
+
+    </style>
+
+    <script>
+        function mainWindowChange()
+        {
+        	window.opener.location = "https://sicsr.ac.in/contact-us";
+        }
+
+        function currentWindowChange()
+        {
+            window.location = "https://sicsr.ac.in";
+        }
+    </script>
+</head>
+
+<body>
+	<br>
+    <form name="f">
+        
+        <input type="button" onclick="mainWindowChange()" value="Main Window Change"> 
+        <input type="button" onclick="currentWindowChange()" value="Current Window Change">
+        <input type="button" onclick="window.close()" value="Close Page">
+    </form>
+</body>
+
+</html>

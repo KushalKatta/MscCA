@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+    <body>
+        <script>
+            function changeImg()
+            {
+                document.getElementById("img").src="2.jpg"
+            }
+            function changeImgAgain()
+            {
+                document.getElementById("img").src="1.jpg"
+            }
+        </script>
+        <a href="#" id="name">
+            <img title="Hello" id="img" src="1.jpg" onmouseover="changeImg()" onmouseout="changeImgAgain()"/>
+        </a>
+    </body>
+</html>

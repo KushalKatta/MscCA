@@ -1,0 +1,43 @@
+<!doctype html>
+
+<head>
+    <title>Q7</title>
+
+    <style>
+
+    </style>
+
+    <script>
+        function bgColorChange()
+        {
+            color = document.f.dropdown1.value;
+            if(color == "RED")
+            {
+                document.bgColor = "red";
+            }
+            else if(color == "GREEN")
+            {
+                document.bgColor = "green";
+            }
+            else if(color == "BLUE")
+            {
+                document.bgColor = "blue";
+            }
+        }
+    </script>
+</head>
+
+<body>
+<br><br><br><br>
+    <center>
+        <form name="f">
+            <select name="dropdown1" onchange="bgColorChange()" style="width: 500px; height: 30px">
+                <option>RED</option>
+                <option>GREEN</option>
+                <option>BLUE</option>
+            </select>
+        </form>
+    </center>
+</body>
+
+</html>

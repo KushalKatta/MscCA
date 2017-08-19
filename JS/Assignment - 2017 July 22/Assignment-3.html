@@ -1,0 +1,26 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function msg()
+            {
+                alert("Text Box: "+document.msgbox.text.value+"\n Check Box: "+document.msgbox.checkbox.value+"\n Text Area: "+document.msgbox.textarea.value+"\n Radio Button: "+document.msgbox.radio.value+"\n List Box: "+document.msgbox.listbox.value);
+
+            }
+        </script>
+        <form name="msgbox">
+            <input type="text" name="text" placeholder="Text Box">
+            <input type="checkbox" name="checkbox" placeholder="Check Box">
+            <input type="textarea" name="textarea" placeholder="Text Area">
+            <input type="radio" name="radio" placeholder="Radio Button">
+            <select name="listbox">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select> 
+            <input type="button" name="submit" value="Show Message Box" onclick="msg()">
+        </form>
+    </body>
+</html>

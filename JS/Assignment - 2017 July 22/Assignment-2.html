@@ -1,0 +1,88 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function ftoc()
+            {
+                document.conversion.ctemp.value=((document.conversion.ftemp.value)-32)*5/9;
+            }
+            function ctof()
+            {
+                document.conversion.ftemp.value=((9/5)*(document.conversion.ctemp.value))+32;
+            }
+            function itoo()
+            {
+                document.conversion.cm.value=parseFloat(document.conversion.inch.value)*2.54;
+                document.conversion.feet.value=parseFloat(document.conversion.inch.value)/12;
+                document.conversion.meter.value=parseFloat(document.conversion.cm.value)/100;
+            }
+            function ctoo()
+            {
+                document.conversion.inch.value=parseFloat(document.conversion.cm.value)/2.54;
+                document.conversion.feet.value=parseFloat(document.conversion.inch.value)/12;
+                document.conversion.meter.value=parseFloat(document.conversion.cm.value)/100;
+            }
+            function ftoo()
+            {
+                document.conversion.inch.value=parseFloat(document.conversion.feet.value)*12;
+                document.conversion.cm.value=parseFloat(document.conversion.inch.value)*2.54;
+                document.conversion.meter.value=parseFloat(document.conversion.cm.value)/100;
+            }
+            function mtoo()
+            {
+                document.conversion.cm.value=parseFloat(document.conversion.meter.value)*100;
+                document.conversion.inch.value=parseFloat(document.conversion.cm.value)/2.54;
+                document.conversion.feet.value=parseFloat(document.conversion.inch.value)/12;
+            }
+        </script>
+        <form name="conversion">
+            <table border="0">
+                <tr>
+                    <td>
+                        Category
+                    </td>
+                    <td>
+                        International System
+                    </td>
+                    <td>
+                        Metric System
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Temperature
+                    </td>
+                    <td>
+                        <input type="text" name="ftemp" placeholder="Fahrenheit" onchange="ftoc()">Fahrenheit
+                    </td>
+                    <td>
+                        <input type="text" name="ctemp" placeholder="Celsius" onchange="ctof()">Celsius
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Length
+                    </td>
+                    <td>
+                        <input type="text" name="inch" placeholder="Inch" onchange="itoo()">Inch
+                    </td>
+                    <td>
+                        <input type="text" name="cm" placeholder="Centimeters" onchange="ctoo()">Centimeters
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Length
+                    </td>
+                    <td>
+                        <input type="text" name="feet" placeholder="Feet" onchange="ftoo()">Feet
+                    </td>
+                    <td>
+                        <input type="text" name="meter" placeholder="Meters" onchange="mtoo()">Meters
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

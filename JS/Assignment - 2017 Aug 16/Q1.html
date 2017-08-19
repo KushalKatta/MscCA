@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <script>
+            str=prompt("Enter A String");
+            document.write("You Entered: " + str + "<br>")
+            document.write("Changed Case: ")
+            for (i=0; i<str.length;i++)
+            {
+                convertChar(str[i]);
+            }
+
+            function convertChar(char)
+            {
+                if (char.toLowerCase()==char)
+                {
+                    document.write(char.toUpperCase());
+                }
+                else
+                {
+                    document.write(char.toLowerCase());
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+
+<head>
+    <title>Q9</title>
+
+    <style>
+
+    </style>
+
+    <script>
+        function changeToUpper()
+        {
+        	document.f.text2.value = document.f.text1.value.toUpperCase();
+        }
+
+        function changeToLower()
+        {
+        	document.f.text3.value = document.f.text1.value.toLowerCase();
+        }
+    </script>
+</head>
+
+<body>
+	<br>
+    <form name="f">
+    	<span>Enter your text: </span>
+    	<input type="text" name="text1" onmouseover="changeToLower()">
+
+    	<input type="button" onclick="changeToUpper()" value="Upper case">
+    	<br><br>
+
+    	<span>Upper case: </span>
+    	<input type="text" name="text2">
+    	<br><br>
+
+    	<span>Lower case: </span>
+    	<input type="text" name="text3">
+    </form>
+</body>
+
+</html>
