@@ -1,27 +1,27 @@
-// Circular Queue as Linked List
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
 
 class CQueueLL
 {
-private:
-	char info;
-	CQueueLL * next;
-public:
-	
+	private:
+		char info;
+		CQueueLL *next;
+	public:
 	//NULL constructor
 	CQueueLL(){}
 	//destructor
 	~CQueueLL(){}
 
-	friend int nodes(const CQueueLL *& F, const CQueueLL *& R){
+	friend int nodes(CQueueLL *&F, CQueueLL *&R){
 		int count=1; //if we initialise it to 0, we will have to increase it outside the while loop. Who will pay for its execution time?
-		if (F==NULL){
+		if (F==NULL)
+		{
 			return 0;
 		}
 		else{
-			CQueueLL * temp=F;
+			CQueueLL *temp;
+			temp = F;
 			while(temp!=R){
 				++count;
 				temp=temp->next;
@@ -29,29 +29,32 @@ public:
 		}
 		return count;
 	}
-	friend void print(const CQueueLL *& F, const CQueueLL *& R){
+	friend void print(CQueueLL *& F,CQueueLL *& R){
 		if (F==NULL){
 			cout<<"Empty Queue";
 		}
 		else{
-			cout<<"Queue of "<<nodes(F,R)<<" nodes.";
+			cout<<"Queue of "<<nodes(F,R)<<" nodes. \n";
 
 			CQueueLL * temp=F;
 			while(temp!=R){
 				cout<<temp->info<<"     ";
 				temp=temp->next;
 			}
-			cout<<temp->info;
+			cout<<temp->info<<endl;
 		}
 	}
 	friend void enqueue(CQueueLL *& F, CQueueLL *& R, char data){
 		CQueueLL * temp;
 		temp=new CQueueLL;
 		if(temp==NULL){
+			cerr<<"NO MEM \n";
 			exit(1);
 		}
+	        temp->next=NULL;
+		temp->info = data;
 		if(F==NULL){
-			F==temp;
+			F=temp;
 		}
 		else{
 			R->next=temp;
@@ -70,29 +73,26 @@ public:
 		}
 		delete (temp);
 	}
-
-	int main()
-	{
-		cout<<"Circular Queue using Linked List";
-
-		char ch='A';
-
-		CQueueLL * front=NULL;
-		CQueueLL * rear=NULL;
-
-		cout<<"During enqueue";
-		while(ch<='D'){
-			enqueue(front, rear, ch);
-			print(front, rear);
-			++ch;
-		}
-
-		cout<<"During dequeue";
-		while(front!=NULL){
-			dequeue(front, rear);
-			print(front, rear);
-		}
-		cout<<"\n";
-		return 0;
-	}//end main
-};//end class
+};
+int main()
+{
+	cout<<"Circular Queue using Linked List \n";
+	char ch='A';
+	CQueueLL * front=NULL;
+	CQueueLL * rear=NULL;
+	cout<<"During enqueue \n";
+	while(ch<='E')
+    {
+		enqueue(front, rear, ch);
+		print(front, rear);
+		++ch;
+	}
+	cout<<"During dequeue \n";
+	while(front!=NULL)
+    {
+		dequeue(front, rear);
+		print(front, rear);
+	}
+	cout<<"\n";
+	return 0;
+}//end main
