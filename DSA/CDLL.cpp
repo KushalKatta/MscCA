@@ -114,7 +114,7 @@ void deleted(CDLL * &H, CDLL * &T, int data)    //Here T needs to be changed, So
     if(H==NULL) return;
     CDLL *curr;
     curr = H;
-    while((curr!=NULL) && (curr->info!=data))
+    while((curr!=T) && (curr->info!=data))
     {
         curr=curr->right;
     }
