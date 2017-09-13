@@ -554,7 +554,6 @@ int main(){
     level_order(root);
 
     //deleting a node from the tree and then displaying it
-    // int delete_array[11]={6,8,7,5,2,1,9,10,3,11,4}; //segmentation fault
     int delete_array[11]={6,2,8,1,4,7,10,3,5,9,11}; //no segmentation fault
     for(int i=0;i<=10;i++){
         cout<<"Deleting "<<delete_array[i]<<" from the tree\n";
