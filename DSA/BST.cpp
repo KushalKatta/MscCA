@@ -510,7 +510,7 @@ int main(){
     printBST(root);
     
     //SUM NON-LEAF
-    cout<<"COUNT " <<Sum_Non_Leaf_node(root)<<"\n";
+    cout<<"Sum of Non Leaf Nodes " <<Sum_Non_Leaf_node(root)<<"\n";
 
     //copying the original BST into a new one
     BST *rootC=NULL;
