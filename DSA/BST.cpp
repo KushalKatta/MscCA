@@ -459,7 +459,7 @@ public:
         p->left=hold;
         node=q;
     }
-    
+
     //found in last year exam paper ::: function to get the sum of non-leaf nodes
     friend int Sum_Non_Leaf_node(BST *ROOT){
       int sumNonLeafNode =(0);
@@ -468,7 +468,7 @@ public:
         sumNonLeafNode+=ROOT->info;
       return Sum_Non_Leaf_node(ROOT->left) + Sum_Non_Leaf_node(ROOT->right) + sumNonLeafNode  ;
     }
-    
+
     //as an alternate ::: function to get the sum of leaf nodes
     friend int Sum_Leaf_node(BST *ROOT){
       int sumLeafNode =(0);
@@ -477,10 +477,10 @@ public:
         sumLeafNode+=ROOT->info;
       return Sum_Leaf_node(ROOT->left) + Sum_Leaf_node(ROOT->right) + sumLeafNode  ;
     }
-    
+
     //found in last year exam paper ::: function to delete the smallest node
     friend void delete_smallest(BST *& ROOT){
-      BST * temp(ROOT),*curr;           //curr is used to remove the pointer from the father node of the smallest node 
+      BST * temp(ROOT),*curr;           //curr is used to remove the pointer from the father node of the smallest node
       curr = NULL;
       if(temp == NULL){
         exit(1);
@@ -489,11 +489,41 @@ public:
         curr = temp;
         temp = temp->left;
     }
-    cout<<"DELETING " << temp->info << "\n";
-    curr->left =NULL;                   //here 
+    cout<<"DELETING " << temp->info << "(smallest) from the tree\n";
+    curr->left =NULL;                   //here
     delete(temp);
+    inorder(ROOT);
+    cout<<"\n";
   }
-    
+
+  //function to delete the largest node in the tree
+  friend void delete_largest(BST *&ROOT) {
+      BST *temp(ROOT), *curr;
+      while (temp->right != NULL) {
+          curr = temp;
+          temp = temp->right;
+      }
+      cout << "Deleting " << temp->info << "(largest) from the tree\n";
+      curr->right = NULL;   //making right of largest node's father to null
+      delete (temp);
+      inorder(ROOT);         //displaying the tree
+      cout << "\n";
+  }         //void
+
+  //function to print the level of each leaf node in the tree
+  friend void print_leaf_levels(BST *&ROOT, int level){
+      if (ROOT != NULL) {
+          ++level;
+          if ((ROOT->left == NULL) && (ROOT->right == NULL)) {
+              --level;
+              cout<<"Level of leaf node with value "<<ROOT->info<<" : "<<level<<"\n";
+          } else {
+              print_leaf_levels(ROOT->left, level);
+              print_leaf_levels(ROOT->right, level);
+          }
+      }
+  }         //void
+
 };//end BST
 
 //main method
@@ -532,12 +562,19 @@ int main(){
 
     //printing the tree in preorder, postorder, inorder and descending
     printBST(root);
-    
+
     //SUM NON-LEAF
     cout<<"Sum of Non Leaf Nodes : " <<Sum_Non_Leaf_node(root)<<"\n";
-    
+
     //SUM NON-LEAF
     cout<<"Sum of Non Leaf Nodes : " <<Sum_Leaf_node(root)<<"\n";
+
+    //printing the level of each leaf node
+    print_leaf_levels(root, 0);
+
+	//deleting the smallest and largest valued nodes from the tree
+	delete_smallest(root);
+	delete_largest(root);
 
     //copying the original BST into a new one
     BST *rootC=NULL;
