@@ -469,6 +469,14 @@ public:
       return Sum_Non_Leaf_node(ROOT->left) + Sum_Non_Leaf_node(ROOT->right) + sumNonLeafNode  ;
     }
     
+    //as an alternate ::: function to get the sum of leaf nodes
+    friend int Sum_Leaf_node(BST *ROOT){
+      int sumLeafNode =(0);
+      if(ROOT == NULL) return 0;
+      if((ROOT->left == NULL)&&(ROOT->right == NULL))
+        sumLeafNode+=ROOT->info;
+      return Sum_Leaf_node(ROOT->left) + Sum_Leaf_node(ROOT->right) + sumLeafNode  ;
+    }
     
 };//end BST
 
@@ -510,7 +518,10 @@ int main(){
     printBST(root);
     
     //SUM NON-LEAF
-    cout<<"Sum of Non Leaf Nodes " <<Sum_Non_Leaf_node(root)<<"\n";
+    cout<<"Sum of Non Leaf Nodes : " <<Sum_Non_Leaf_node(root)<<"\n";
+    
+    //SUM NON-LEAF
+    cout<<"Sum of Non Leaf Nodes : " <<Sum_Leaf_node(root)<<"\n";
 
     //copying the original BST into a new one
     BST *rootC=NULL;
