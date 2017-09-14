@@ -478,6 +478,22 @@ public:
       return Sum_Leaf_node(ROOT->left) + Sum_Leaf_node(ROOT->right) + sumLeafNode  ;
     }
     
+    //found in last year exam paper ::: function to delete the smallest node
+    friend void delete_smallest(BST *& ROOT){
+      BST * temp(ROOT),*curr;           //curr is used to remove the pointer from the father node of the smallest node 
+      curr = NULL;
+      if(temp == NULL){
+        exit(1);
+      }
+      while(temp->left != NULL){
+        curr = temp;
+        temp = temp->left;
+    }
+    cout<<"DELETING " << temp->info << "\n";
+    curr->left =NULL;                   //here 
+    delete(temp);
+  }
+    
 };//end BST
 
 //main method
