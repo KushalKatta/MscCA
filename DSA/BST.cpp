@@ -480,17 +480,17 @@ public:
 
     //found in last year exam paper ::: function to delete the smallest node
     friend void delete_smallest(BST *& ROOT){
-      BST * temp(ROOT),*curr;           //curr is used to remove the pointer from the father node of the smallest node
-      curr = NULL;
+      BST * temp(ROOT),*ref;           //curr is used to remove the pointer from the father node of the smallest node
+      ref = NULL;
       if(temp == NULL){
         exit(1);
       }
       while(temp->left != NULL){
-        curr = temp;
+        ref = temp;
         temp = temp->left;
     }
     cout<<"DELETING " << temp->info << "(smallest) from the tree\n";
-    curr->left =NULL;                   //here
+    ref->left =NULL;                   //here
     delete(temp);
     inorder(ROOT);
     cout<<"\n";
@@ -498,13 +498,13 @@ public:
 
   //function to delete the largest node in the tree
   friend void delete_largest(BST *&ROOT) {
-      BST *temp(ROOT), *curr;
+      BST *temp(ROOT), *ref;
       while (temp->right != NULL) {
-          curr = temp;
+          ref = temp;
           temp = temp->right;
       }
       cout << "Deleting " << temp->info << "(largest) from the tree\n";
-      curr->right = NULL;   //making right of largest node's father to null
+      ref->right = NULL;   //making right of largest node's father to null
       delete (temp);
       inorder(ROOT);         //displaying the tree
       cout << "\n";
