@@ -459,6 +459,17 @@ public:
         p->left=hold;
         node=q;
     }
+    
+    //found in last year exam paper ::: function to get the sum of non-leaf nodes
+    friend int Sum_Non_Leaf_node(BST *ROOT){
+      int sumNonLeafNode =(0);
+      if(ROOT == NULL) return 0;
+      if((ROOT->left != NULL)&&(ROOT->right != NULL))
+        sumNonLeafNode+=ROOT->info;
+      return Sum_Non_Leaf_node(ROOT->left) + Sum_Non_Leaf_node(ROOT->right) + sumNonLeafNode  ;
+    }
+    
+    
 };//end BST
 
 //main method
@@ -497,6 +508,9 @@ int main(){
 
     //printing the tree in preorder, postorder, inorder and descending
     printBST(root);
+    
+    //SUM NON-LEAF
+    cout<<"COUNT " <<Sum_Non_Leaf_node(root)<<"\n";
 
     //copying the original BST into a new one
     BST *rootC=NULL;
