@@ -1,6 +1,6 @@
-Display all 'set' variables
-set yourname variable & display again
-pause the program ('pause' command)
-find out all possible lets say compression program installed on your PC (eg:- winRAR, 7-zip, tar, winZip)
-if program is found "WinRAR", uninstall the program
-to log all the actions to FirstBatLogs.log
+1.  Display all 'set' variables
+2.  set yourname variable & display again
+3.  pause the program ('pause' command)
+4.  find out all possible lets say compression program installed on your PC (eg:- winRAR, 7-zip, tar, winZip)
+5.  if program is found "WinRAR", uninstall the program
+6.  to log all the actions to FirstBatLogs.log
