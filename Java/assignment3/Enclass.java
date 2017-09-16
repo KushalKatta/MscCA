@@ -62,8 +62,8 @@ class Enclass
 	
 	public static void main(String args[])
 	{
-		Enclass obj=new Enclass();
-		obj.fun();
+		Enclass enc=new Enclass();
+		enc.fun();
 		
 	}
 }
