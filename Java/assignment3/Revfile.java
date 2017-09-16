@@ -12,7 +12,7 @@ class Revfile
 		
 		String stringtoshow="";
 		
-		int charet=0;
+		int charet;
 		try{
 		
 		FileInputStream in=new FileInputStream(scanme.nextLine()); //enter file name
