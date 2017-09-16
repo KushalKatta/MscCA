@@ -5,7 +5,7 @@ import java.util.*;
 class Revfile
 {
 	
-	void readReverse()
+	void revfile()
 	{
 		
 		Scanner scanme=new Scanner(System.in);
@@ -36,8 +36,8 @@ class Revfile
 	
 	public static void main(String args[])
 	{
-		Revfile obj=new Revfile();
-		obj.readReverse();
+		Revfile j=new Revfile();
+		j.revfile();
 		
 		
 	}
