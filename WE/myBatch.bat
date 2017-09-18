@@ -1,12 +1,14 @@
+::: Author - Akash Arora
 @echo off
 
-::: LOG FILE PATH
+::: LOG FILE PATH - Desktop 
 set logPath=%USERPROFILE%\Desktop\mylog.log
 
-::: Taking Program Name from User
+::: Taking Program Name from User (Case Sensitive)
 set /p searchApp=Enter Program To Look for :
 
-::: Custom While Loop
+::: Custom While Loop - While not present in  Batch Script Achieved through Goto
+::: This will take the Verbose Level and the user will be prompted until the Normal/Verbose is typed correctly (Case-Sensitive)
 :while
 	echo.
 	echo Enter Verbose Level
@@ -43,6 +45,7 @@ echo %logPrefix% Running Set Command >> %logPath%
 echo --------------------------
 echo -------------------------- >> %logPath%
 set
+::: Checking for Verbositiy Level and Writing to log file
 if %verboseLevel%==Verbose echo %logPrefix% After Adding myName >> %logPath% && echo. >> %logPath% && set >> %logPath%
 echo --------------------------
 echo -------------------------- >> %logPath%
@@ -57,6 +60,8 @@ echo -------------------------- >> %logPath%
 ::: Searching Begins in ProgramFiles
 echo Searching In ProgramFiles
 echo %logPrefix% Searching In ProgramFiles  >> %logPath%
+
+::: Changing Directory
 cd /d %ProgramFiles%
 
 echo **************************
