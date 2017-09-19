@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var regEx = /[0-9a-fA-F]{6}/
+            var str=(prompt("Enter a Hexadecimal color"))
+            document.write("Entered Hexadecimal color: " + str + "<br>");
+            if(str.match(regEx)==str)
+            {
+                document.write("Valid Hexadecimal color")
+            }
+            else
+            {
+                document.write("Invalid Hexadecimal color")
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var regEx = /[0-9]{6}/
+            var str=(prompt("Enter a PinCode"))
+            document.write("Entered Pin Code: " + str + "<br>");
+            if(str.match(regEx)==str)
+            {
+                document.write("Valid Pin Code")
+            }
+            else
+            {
+                document.write("Invalid Pin Code")
+            }
+        </script>
+    </body>
+</html>

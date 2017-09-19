@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var regEx = /[a-zA-Z][0-9a-zA-Z._]*[0-9]*@[a-zA-Z]+.[a-zA-Z]+/
+            var str=(prompt("Enter a Mail Address"))
+            document.write("Entered Mail Address: " + str + "<br>");
+            if(str.match(regEx)==str)
+            {
+                document.write("Valid Address")
+            }
+            else
+            {
+                document.write("Invalid Address")
+            }
+        </script>
+    </body>
+</html>
