@@ -77,8 +77,10 @@ for /d  %%i in (*) do (
 		if %%i==WinRAR set foundWinRAR=true
 		echo %searchApp% Found
 		echo [%DATE% %TIME%] %logPrefix% %searchApp% FOUND >> %logPath%
+		goto :afterMath
 		)
 )
+:afterMath
 echo -------------------------- >> %logPath%
 
 if %foundWinRAR%==true echo WinRAR was Found... UnInstalling Now. && echo [%DATE% %TIME%] %logPrefix% WinRAR Found .. Changing Directory and UnInstalling >> %logPath% && cd WinRAR && uninstall.exe
@@ -106,8 +108,10 @@ for /d  %%i in (*) do (
 		if %%i==WinRAR set foundWinRAR=true
 		echo %searchApp% Found
 		echo [%DATE% %TIME%] %logPrefix% %searchApp% FOUND >> %logPath%
+		goto :afterMath86
 		)
 )
+:afterMath86
 echo -------------------------- >> %logPath%
 if %foundWinRAR%==true echo WinRAR was Found... UnInstalling Now. && echo [%DATE% %TIME%] %logPrefix% WinRAR Found .. Changing Directory and UnInstalling >> %logPath% && cd WinRAR && uninstall.exe
 if %counter%==0 echo %searchApp% was not found in %ProgramFiles(x86)% && echo [%DATE% %TIME%] %logPrefix% %searchApp% was not found in %ProgramFiles% >> %logPath%
