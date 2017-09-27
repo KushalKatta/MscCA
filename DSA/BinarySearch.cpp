@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void SearchA(int A[], int N, int value, int &here)
+void SearchA(int A[], int N, int value, int &here)              // For Descending Change Name to SearchD
 {
         int low(0), high(N-1), mid;
         while(low <= high)
@@ -12,7 +12,7 @@ void SearchA(int A[], int N, int value, int &here)
                         here = mid;
                         return;
                 }
-                else if(value < A[mid])
+                else if(value < A[mid])                         // For Descending (value > a[mid])
                 {
                         high = mid - 1;
                 }
