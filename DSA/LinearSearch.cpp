@@ -1,5 +1,4 @@
 #include<iostream>
-#include<stdio.h>
 using namespace std;
 void LSearch(int A[], int value, int N, int &here)
 {
@@ -20,7 +19,7 @@ void LSearch(int A[], int value, int N, int &here)
 	}
 }
 
-bool LSearch1(int A[], int value, int N)
+bool LSearch1(int A[], int value, int N)		//for exam don't write 1 :P
 {
 	int j(0);
 	while(j<N)
@@ -53,5 +52,5 @@ int main()
 	cout<<endl;
 	cout<<"Looking for 39 (using bool function) \n";
 	
-	cout<<LSearch1(A,39,9)<<endl;	
+	cout<<LSearch1(A,39,9)<<endl;				
 }
