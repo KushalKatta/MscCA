@@ -1,42 +1,50 @@
-#Write a func similar to insert, remove, and reverse
-#i.e. Insert a Value without using insert method
-#i.e. Remove a Value without using remove method
-#i.e. Reverse a List without using reverse method
+#write your own python code for insert, reverse and remove
 
-l=[0,1,2,315,63,5,5,6,7]
-print(l)
+myList=[1,2,3,4,5,6,7]
 
-l.append(0)
-print(l)
-#insert at index of 4
-indx=4
-for i in range(len(l)-1,indx,-1):
-    temp=l[i]
-    l[i]=l[i-1]
-    l[i-1]=temp
-l[indx]=150
+#insert
+print("INSERT METHOD")
 
-print(l)
+num=(int(input("Enter a number to insert : ")))
+pos=(int(input("Enter the position to insert at : ")))
 
-'''
-#remove at index of 4
-indx=4
-for i in range(indx,len(l)-1):
-    l[i]=l[i+1]
-l.pop()
+myList.append(0)
+for i in range(len(myList), pos, -1):
+	myList[i-1]=myList[i-2]
+myList[pos]=num
 
-print(l)
-'''
+print(myList)
 
-'''
-#reverse a list
+#remove
+print("REMOVE METHOD")
+
+num=(int(input("Enter a number to remove : ")))
+
+flag=0
+
+for i in range(0,len(myList)):
+	if(num==myList[i]):
+		#remove the element and shift to the left then break
+		flag=1
+		for j in range(i, len(myList)-1):
+			myList[j]=myList[j+1]
+		myList.pop()	
+		break
+if(flag==0):
+	print("%d not found." %num)
+else:
+	print(myList)
+
+#reverse
+print("REVERSE METHOD")
+
 i=0
-while(True):
-    if((len(l)-i-1)<=i):
-        break
-    temp=l[i]
-    l[i]=l[len(l)-i-1]
-    l[len(l)-i-1]=temp
-    i+=1
-print(l)
-'''
+j=len(myList)-1
+
+while((i-j) not in [0,1]):
+	temp=myList[i]
+	myList[i]=myList[j]
+	myList[j]=temp
+	i=i+1
+	j=j-1
+print(myList)
