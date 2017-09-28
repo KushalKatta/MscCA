@@ -1,0 +1,15 @@
+
+def searchstr(ch,stri):
+    for i in range(0,len(stri)):
+        
+
+        str2=stri[i:i+len(ch)]
+        if(str2==ch):
+            return i
+    return -1
+            
+
+s=input("Enter a string")
+c=input('What to search')
+
+print(searchstr(c,s))
