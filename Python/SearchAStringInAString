@@ -1,0 +1,11 @@
+def searchstr(stri,ch):
+        for i in range(0,len(stri)):
+                if(ch == stri[i:i+len(ch)]):
+                        return i
+        return -1
+
+def main():
+        print("Index : ", searchstr(input("Enter String"), input("What to Match")))
+
+if __name__ == "__main__":
+        main()
